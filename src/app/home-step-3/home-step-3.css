@@ -1,0 +1,185 @@
+/* Reset et styles de base */
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Marcellus&family=Merienda:wght@300..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bodys {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: rgb(232, 247, 241);
+}
+
+/* Container principal */
+.big {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    
+}
+
+/* En-tête */
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.header h4 {
+    color: #6c757d;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    font-family: Marcellus;
+}
+
+.header h1 {
+    color: #2c3e50;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-family: Marcellus;
+}
+
+/* Rangées de services */
+.first, .second {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 60px;
+    align-items: stretch;
+}
+
+/* Cartes */
+.card {
+    flex: 1;
+    min-width: 450px;
+    max-width: 48%;
+    background: rgb(251, 246, 239);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Images */
+.card .img {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    flex-shrink: 0;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    transition: transform 0.3s ease;
+}
+
+
+
+/* Contenu texte */
+.text {
+    width: 100%;
+    height: auto;
+    padding: 35px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.text h3 {
+    font-family: Marcellus;
+    color: #2c3e50;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.text p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: auto;
+    flex-grow: 1;
+}
+
+/* Boutons */
+.text button {
+    background: transparent;
+    color: #8BC34A;
+    border: 2px solid #8BC34A;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 25px;
+    align-self: flex-start;
+}
+
+.text button:hover {
+    background: #8BC34A;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Suppression des BR multiples - utilisez margin à la place */
+br {
+    display: none;
+}
+
+.first {
+    margin-bottom: 60px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .first, .second {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .card {
+        min-width: unset;
+        max-width: 100%;
+    }
+    
+    .header h1 {
+        font-size: 32px;
+    }
+    
+    .text {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .big {
+        padding: 40px 15px;
+    }
+    
+    .header h1 {
+        font-size: 28px;
+    }
+    
+    .text h3 {
+        font-size: 20px;
+    }
+}
