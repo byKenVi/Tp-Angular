@@ -1,0 +1,13 @@
+/* Styles supplémentaires si nécessaire */
+.service-card-container {
+  background-color: #f8f9fa;
+}
+
+/* Animation pour le bouton */
+button {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
