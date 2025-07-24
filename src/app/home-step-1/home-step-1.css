@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Marcellus&family=Merienda:wght@300..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+
+}
+
+.container {
+  height: 90vh;
+  width: 100%; 
+  box-sizing: border-box;
+  background-color: #1d1d1d;
+  background-image: url('https://websitedemos.net/wellness-coach-02/wp-content/uploads/sites/1514/2024/12/Hero-BG-scaled-1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.left {
+  width: 50%;
+  height: 100%;
+  float: left;
+  padding: 10px;
+  margin-left: 30px;
+  margin-top: 160px;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  font-size: 70px;
+  margin-top: 20px;
+  font-family: Marcellus;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+button{
+  background-color: #20912d;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 50px;
+  margin-top:-10px;
+}
+
+button:hover {
+  background-color: #26b136;
+}
