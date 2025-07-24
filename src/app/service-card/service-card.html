@@ -1,0 +1,49 @@
+<div class="container mx-auto px-4 py-16">
+  <div class="flex flex-col lg:flex-row items-center gap-12" 
+       [class.lg:flex-row-reverse]="isReversed">
+    
+    <!-- Image Section -->
+    <div class="w-full lg:w-1/2">
+      <div class="relative">
+        <img [src]="service.image" 
+             [alt]="service.title"
+             class="w-full h-80 lg:h-96 object-cover rounded-lg shadow-lg">
+      </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="w-full lg:w-1/2 space-y-6">
+      <div>
+        <h2 class="text-3xl lg:text-4xl font-light text-gray-800 mb-4 leading-tight">
+          {{ service.title }}
+        </h2>
+        <p class="text-lg text-gray-600 mb-6" *ngIf="service.description">
+          {{ service.description }}
+        </p>
+        <p class="text-lg font-medium text-gray-700 mb-8">
+          {{ service.startPrice }}
+        </p>
+      </div>
+
+      <!-- Features List -->
+      <div class="space-y-4">
+        <div *ngFor="let feature of service.features; let i = index" class="border-b border-gray-200 pb-3">
+          <h3 class="font-semibold text-gray-800 mb-1" *ngIf="i % 2 === 0">
+            {{ feature }}
+          </h3>
+          <p class="text-gray-600 text-sm" *ngIf="i % 2 === 1">
+            {{ feature }}
+          </p>
+        </div>
+      </div>
+
+      <!-- Book Appointment Button -->
+      <div class="pt-6">
+        <button (click)="onBookAppointment()"
+                class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-medium transition-colors duration-200 transform hover:scale-105">
+          Book An Appointment
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+.service-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.service-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.service-image {
+  width: 200px;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.text-content {
+  flex: 1;
+  padding: 1rem;
+}
+
+button {
+  margin-top: 1rem;
+  background: darkmagenta;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
