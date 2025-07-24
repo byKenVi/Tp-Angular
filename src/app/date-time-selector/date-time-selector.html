@@ -1,0 +1,133 @@
+<div class="flex">
+  
+  <!-- Left Side - Date & Time Selection Info -->
+  <div class="w-64 pr-8">
+    
+    <!-- Icon -->
+    <div class="mb-6">
+      <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+        <svg class="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Title -->
+    <h3 class="text-xl font-semibold text-gray-800 mb-4">
+      Select Date & Time
+    </h3>
+    
+    <!-- Description -->
+    <p class="text-gray-600 text-sm mb-8 leading-relaxed">
+      Please select date and time for your appointment
+    </p>
+
+    <!-- Questions Section -->
+    <div class="border-t border-gray-200 pt-6 mb-8">
+      <h4 class="font-semibold text-gray-800 mb-3">Questions?</h4>
+      <p class="text-gray-600 text-sm">
+        Call <span class="font-medium">(858) 939-3746</span> for help
+      </p>
+    </div>
+
+    <!-- Back Button -->
+    <button (click)="onBack()" 
+            class="flex items-center text-gray-600 hover:text-gray-800 transition-colors">
+      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+      Back
+    </button>
+    
+  </div>
+
+  <!-- Right Side - Calendar and Time Selection -->
+  <div class="flex-1">
+    
+    <!-- Calendar Header -->
+    <div class="flex items-center justify-between mb-6">
+      <button (click)="previousMonth()" 
+              class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      
+      <h3 class="text-lg font-semibold text-gray-800">
+        {{ getMonthYear() }}
+      </h3>
+      
+      <button (click)="nextMonth()" 
+              class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Calendar Grid -->
+    <div class="grid grid-cols-7 gap-2 mb-8">
+      
+      <!-- Week Day Headers -->
+      <div *ngFor="let day of ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']" 
+           class="text-center text-sm font-medium text-gray-500 p-2">
+        {{ day }}
+      </div>
+
+      <!-- Calendar Days -->
+      <div *ngFor="let date of getCalendarDays()" 
+           class="aspect-square flex items-center justify-center">
+        
+        <button *ngIf="date" 
+                (click)="selectDate(date)"
+                [disabled]="!isDateAvailable(date)"
+                [ngClass]="{
+                  'w-10 h-10 rounded-lg text-sm font-medium transition-all duration-200': true,
+                  'bg-gray-900 text-white': isDateSelected(date),
+                  'hover:bg-gray-100 text-gray-700': isDateAvailable(date) && !isDateSelected(date),
+                  'text-gray-300 cursor-not-allowed': !isDateAvailable(date),
+                  'text-gray-700': isDateAvailable(date),
+                  'available-date': isDateAvailable(date)
+                }">
+          {{ date.getDate() }}
+        </button>
+        
+      </div>
+    </div>
+
+    <!-- Time Selection -->
+    <div *ngIf="selectedDate" class="space-y-4">
+      
+      <h4 class="text-lg font-medium text-gray-800 mb-4">
+        Pick a slot for {{ getSelectedDateFormatted() }}
+      </h4>
+
+      <!-- Time Slots Table -->
+      <table class="time-slots-table w-full">
+        <tr *ngFor="let row of getTimeSlotRows()">
+          <td *ngFor="let time of row" class="time-slot-cell"
+              [ngClass]="{ 'selected': selectedTime === time }"
+              (click)="selectTime(time)">
+            {{ time }}
+          </td>
+        </tr>
+      </table>
+
+      <!-- Next Button -->
+      <div class="flex justify-end pt-6" *ngIf="selectedTime">
+        <button (click)="onNext()" 
+                [disabled]="!canProceed()"
+                class="bg-gray-900 hover:bg-gray-800 disabled:bg-gray-400 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center">
+          Next
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+    
+  </div>
+  
+</div>
