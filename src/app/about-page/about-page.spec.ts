@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DateTimeSelector } from './date-time-selector';
+import { AboutPage } from './about-page';
 
-describe('DateTimeSelector', () => {
-  let component: DateTimeSelector;
-  let fixture: ComponentFixture<DateTimeSelector>;
+describe('AboutPage', () => {
+  let component: AboutPage;
+  let fixture: ComponentFixture<AboutPage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DateTimeSelector]
+      imports: [AboutPage]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DateTimeSelector);
+    fixture = TestBed.createComponent(AboutPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

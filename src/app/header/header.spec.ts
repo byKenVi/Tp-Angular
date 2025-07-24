@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BookingPopup } from './booking-popup';
+import { Header } from './header';
 
-describe('BookingPopup', () => {
-  let component: BookingPopup;
-  let fixture: ComponentFixture<BookingPopup>;
+describe('Header', () => {
+  let component: Header;
+  let fixture: ComponentFixture<Header>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BookingPopup]
+      imports: [Header]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BookingPopup);
+    fixture = TestBed.createComponent(Header);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
