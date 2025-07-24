@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Marcellus&family=Merienda:wght@300..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bodys {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: rgb(248, 240, 229);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    gap: 60px;
+}
+
+.left {
+    flex: 1;
+    max-width: 500px;
+    height: 700px;
+    background-image: url("https://websitedemos.net/wellness-coach-02/wp-content/uploads/sites/1514/2024/12/Book-an-Appointment-Sec-IMG.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.right {
+    flex: 1;
+    max-width: 500px;
+    padding: 0 20px;
+}
+
+.right h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-family: Marcellus;
+}
+
+.right p {
+    font-size: 1.1rem;
+    color: #718096;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.cta-button {
+background-color: #20912d;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 50px;
+  margin-top:-10px;
+}
+
+.cta-button:hover {
+    background-color: #26b136;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        padding: 20px;
+    }
+    
+    .left {
+        height: 400px;
+        max-width: 100%;
+    }
+    
+    .right {
+        max-width: 100%;
+    }
+    
+    .right h1 {
+        font-size: 2.2rem;
+    }
+}
